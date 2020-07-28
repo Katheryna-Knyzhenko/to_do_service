@@ -1,6 +1,38 @@
-$backColor: red;
+$backColor: rgb(203, 186, 232);
 
 .wrap {
   background-color: $backColor;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.mainContainer {
+  background-color: aliceblue;
+  width: 60vw;
+  height: 60vh;
+  display: flex;
+  flex-flow: column;
+}
+
+.inputSearchTask {
+  display: flex;
+  position: relative;
+  width: 59.3vw;
+  height: 3.5em;
+  border: 1px black solid;
+  border-radius: 13px;
+  padding-left: 10px;
+&:focus {
+  color: blue;
+  font-weight: bold;
+  padding-left: 10px;
+  outline: none;
+}
 }

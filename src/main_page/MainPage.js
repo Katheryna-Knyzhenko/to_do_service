@@ -55,8 +55,9 @@ class MainPage extends Component {
     };
     return (
       <div className='wrap'>
+        <div className='mainContainer'>
         <form>
-        <input onInput={pressTaskName}  onKeyUp={searchTask} type='text' className='searchTask' placeholder='Enter task name for search...'/>
+        <input className='inputSearchTask' onInput={pressTaskName}  onKeyUp={searchTask} type='text'  placeholder='Enter task name for search...'/>
         </form>
         <TasksGrid onSubmitDeleteTask={onSubmitDeleteTask} changeStatus={changeStatus} tasks={this.state.tasks}/>
         <form onSubmit={handleSubmit}>
@@ -66,6 +67,7 @@ class MainPage extends Component {
           </label>
           <input type='submit' value='Add task!'/>
         </form>
+      </div>
       </div>
 
     )
