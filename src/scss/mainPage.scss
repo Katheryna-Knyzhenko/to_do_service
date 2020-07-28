@@ -14,7 +14,7 @@ $backColor: rgb(203, 186, 232);
   justify-content: center;
 }
 .mainContainer {
-  background-color: aliceblue;
+  background-color: $backColor;
   width: 60vw;
   height: 60vh;
   display: flex;
@@ -29,6 +29,9 @@ $backColor: rgb(203, 186, 232);
   border: 1px black solid;
   border-radius: 13px;
   padding-left: 10px;
+  font-size: 1em;
+  margin-bottom: 4em;
+  background-color: whitesmoke;
 &:focus {
   color: blue;
   font-weight: bold;

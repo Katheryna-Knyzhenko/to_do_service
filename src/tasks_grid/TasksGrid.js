@@ -20,14 +20,15 @@ class TasksGrid extends Component {
     };
 
     return (
-      <div>
+      <div className='taskGrid'>
         {tasks.map(task =>
-          <div key={task.id}>
+          <div key={task.id} className='flexDiv' >
             <span
-              className={task.done ? 'taskDoneStatus' : 'taskToDoStatus'}
+              className={task.done ? 'taskTitle taskDoneStatus' : 'taskTitle taskToDoStatus'}
               onClick={() => changeStatus(task.id, !task.done)}>{task.title}
             </span>
-            {task.done && <button onClick={() => this.setState({deletedTaskId: task.id})}>Delete</button>}
+
+            {task.done && <button className='deleteTask' onClick={() => this.setState({deletedTaskId: task.id})}>Delete</button>}
 
             {this.state.deletedTaskId === task.id &&
             <DeleteConfirmation deletedTaskId={this.state.deletedTaskId} onSubmitDeleteTask={onSubmitDeleteTask} onCancelDeleteTask={onCancelDeleteTask}/>}

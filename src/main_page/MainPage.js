@@ -60,12 +60,12 @@ class MainPage extends Component {
         <input className='inputSearchTask' onInput={pressTaskName}  onKeyUp={searchTask} type='text'  placeholder='Enter task name for search...'/>
         </form>
         <TasksGrid onSubmitDeleteTask={onSubmitDeleteTask} changeStatus={changeStatus} tasks={this.state.tasks}/>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='formSubmit'>
           <label>
-            <input type='text' value={this.state.title} onChange={handleChange}
+            <input className='inputAddTask' type='text' value={this.state.title} onChange={handleChange}
                    placeholder='Enter task and press "Add task!" button'/>
           </label>
-          <input type='submit' value='Add task!'/>
+          <input className='buttonAddTask' type='submit' value='Add task!'/>
         </form>
       </div>
       </div>

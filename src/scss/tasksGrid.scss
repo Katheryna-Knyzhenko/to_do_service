@@ -1,0 +1,39 @@
+.taskGrid {
+  display: flex;
+  border: 1px black solid;
+  border-radius: 13px;
+  padding-left: 3em;
+  padding-right: 1%;
+  font-size: 1.4em;
+  color: blue;
+  position: relative;
+  flex-flow: column;
+  overflow: auto;
+  background-color: whitesmoke;
+}
+.taskTitle {
+  height: 1em;
+  display: flex;
+  flex-flow: row;
+  padding-bottom: 2%;
+}
+.taskDoneStatus {
+  color: gainsboro;
+}
+.taskToDoStatus {
+  color: blue;
+}
+.flexDiv {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  border-bottom: black 1px solid;
+  padding-top: 1.5%;
+
+}
+.deleteTask {
+  display: flex;
+  height: 2em;
+  align-items: center;
+  margin-left: 5em;
+}
