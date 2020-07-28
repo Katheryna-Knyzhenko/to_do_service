@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {updateTask} from "../RestApi";
+import './TasksGrid.css';
 
 class TasksGrid extends Component {
     constructor(props) {
@@ -12,7 +12,9 @@ class TasksGrid extends Component {
 
         return (
             <div>
-                {this.props.tasks.map(task => <div key={task.id}><span onClick={() => updateTask(task.id, !task.done)}>{task.title}</span></div>)}
+                {this.props.tasks.map(task => <div key={task.id}><span
+                    className={task.done ? 'taskDoneStatus' : 'taskToDoStatus'}
+                    onClick={() => this.props.changeStatus(task.id, !task.done)}>{task.title}</span></div>)}
             </div>
 
         )

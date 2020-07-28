@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './MainPage.css';
 import TasksGrid from "../tasks_grid/TasksGrid";
-import {createTask, getTasks} from "../RestApi";
+import {createTask, getTasks, updateTask} from "../RestApi";
 
 class MainPage extends Component {
     constructor(props) {
@@ -32,9 +32,16 @@ class MainPage extends Component {
             event.preventDefault();
         };
 
+        const changeStatus = (taskId, taskStatus) => {
+            updateTask(taskId, taskStatus)
+                .then(() => getTasks()
+                    .then((response) => {this.setState({tasks: response.data})
+            }))
+        };
+
         return (
             <div>
-                <TasksGrid tasks={this.state.tasks}/>
+                <TasksGrid changeStatus={changeStatus} tasks={this.state.tasks}/>
                 <form onSubmit={handleSubmit}>
                     <label>
                         <input type='text' value={this.state.title} onChange={handleChange}

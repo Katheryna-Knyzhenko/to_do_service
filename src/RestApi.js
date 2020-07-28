@@ -15,7 +15,6 @@ export function getTasks() {
 }
 
 export function updateTask(taskId, status) {
-    console.log('Status', status);
     return axios.put(`https://repetitora.net/api/JS/Tasks`, {
         widgetId,
         taskId,
