@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../scss/deletePopUp.scss'
 
 
 class DeleteConfirmation extends Component {
@@ -12,7 +13,7 @@ class DeleteConfirmation extends Component {
     const {deletedTaskId, onSubmitDeleteTask, onCancelDeleteTask} = this.props;
 
     return (
-      <div>
+      <div className='popupDeleteOrNo'>
         <div>Are you sure you want to delete the task?</div>
         <button onClick={() => onSubmitDeleteTask(deletedTaskId)}>OK</button>
         <button onClick={onCancelDeleteTask}>Cancel</button>

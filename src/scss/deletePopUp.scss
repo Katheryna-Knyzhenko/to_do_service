@@ -1,0 +1,16 @@
+.popupDeleteOrNo {
+  z-index: 30;
+  position: fixed;
+  width: 53vw;
+  height: 30vh;
+  background-color: lightslategray;
+  overflow: hidden;
+  display: inline-block;
+  top: 25%;
+  color: whitesmoke;
+  font-size: 1.6em;
+  vertical-align: middle;
+  text-align: center;
+  padding-top: 3em;
+  border-radius: 2%;
+}

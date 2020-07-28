@@ -1,10 +1,15 @@
+
+@font-face {
+font-family: 'Kaushan Script';
+  src: url("../font/KaushanScript-Regular.otf");
+}
 .taskGrid {
   display: flex;
   border: 1px black solid;
   border-radius: 13px;
   padding-left: 3em;
   padding-right: 1%;
-  font-size: 1.4em;
+  font-size: 1.2em;
   color: blue;
   position: relative;
   flex-flow: column;
@@ -33,7 +38,21 @@
 }
 .deleteTask {
   display: flex;
-  height: 2em;
+  height: 2.4em;
+  width: 6em;
   align-items: center;
   margin-left: 5em;
+  background-color: gray;
+  color: white;
+  justify-content: center;
+  border-bottom-left-radius: 50% 40px;
+  border-bottom-right-radius: 40% 10px;
+  border-top-right-radius: 30% 80px;
+  border-top-left-radius: 80% 10px;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: #cbbae8;
+  }
 }

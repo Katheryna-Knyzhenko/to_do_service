@@ -4,7 +4,8 @@ $backColor: rgb(203, 186, 232);
   background-color: $backColor;
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   overflow: hidden;
@@ -38,4 +39,39 @@ $backColor: rgb(203, 186, 232);
   padding-left: 10px;
   outline: none;
 }
+}
+
+.formSubmit {
+  display: flex;
+  margin-top: 5em;
+  flex-flow: row;
+  width: 59.3vw;
+  height: 3.5em;
+  background-color: antiquewhite;
+}
+
+.inputAddTask {
+  display: flex;
+  height: 3.5em;
+  width: 47vw;
+  font-size: 1em;
+  padding-left: 2%;
+  &:focus {
+    color: blue;
+    font-weight: bold;
+  }
+}
+.buttonAddTask {
+  display: flex;
+  height: 4em;
+  width: 13vw;
+  font-size: 1em;
+  padding-left: 2%;
+  justify-content: center;
+}
+.buttonAddTask:hover {
+  background-color: #cbbae8;
+  font-weight: bold;
+  color: white;
+  outline: none;
 }
