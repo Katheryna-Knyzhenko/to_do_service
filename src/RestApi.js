@@ -21,3 +21,8 @@ export function updateTask(taskId, status) {
     done: status,
   });
 }
+
+export function deleteTask (id) {
+    return axios.delete(`https://repetitora.net/api/JS/Tasks?widgetId=${widgetId}&taskId=${id}`
+    );
+}

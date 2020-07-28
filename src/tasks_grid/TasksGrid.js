@@ -1,23 +1,36 @@
 import React, {Component} from 'react';
 import './TasksGrid.css';
+import DeleteConfirmation from "./DeleteConfirmation";
+import {deleteTask} from "../RestApi";
 
 class TasksGrid extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      deletedTaskId: null,
+    };
   }
 
 
   render() {
+    const {tasks, changeStatus, onSubmitDeleteTask} = this.props;
+
+    const onCancelDeleteTask = () => {
+      this.setState({deletedTaskId: null})
+    };
 
     return (
       <div>
-        {this.props.tasks.map(task =>
+        {tasks.map(task =>
           <div key={task.id}>
             <span
               className={task.done ? 'taskDoneStatus' : 'taskToDoStatus'}
-              onClick={() => this.props.changeStatus(task.id, !task.done)}>{task.title}
+              onClick={() => changeStatus(task.id, !task.done)}>{task.title}
             </span>
+            {task.done && <button onClick={() => this.setState({deletedTaskId: task.id})}>Delete</button>}
+
+            {this.state.deletedTaskId === task.id &&
+            <DeleteConfirmation deletedTaskId={this.state.deletedTaskId} onSubmitDeleteTask={onSubmitDeleteTask} onCancelDeleteTask={onCancelDeleteTask}/>}
           </div>)}
       </div>
 
