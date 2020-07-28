@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import './TasksGrid.css';
+import '../scss/tasksGrid.scss';
 import DeleteConfirmation from "./DeleteConfirmation";
-import {deleteTask} from "../RestApi";
+
 
 class TasksGrid extends Component {
   constructor(props) {

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './MainPage.css';
+import '../scss/mainPage.scss'
 import TasksGrid from "../tasks_grid/TasksGrid";
 import {createTask, deleteTask, getTasks, updateTask} from "../RestApi";
 
@@ -9,6 +9,7 @@ class MainPage extends Component {
     this.state = {
       tasks: [],
       title: '',
+      searchedTask: []
     };
   }
 
@@ -43,9 +44,20 @@ class MainPage extends Component {
     const onSubmitDeleteTask = (taskId) => {
       deleteTask(taskId).then(() => getTasks().then((response) => this.setState({tasks: response.data})))
     };
+  const pressTaskName = (event) => {
+    this.setState({searchedTask: event.target.value});
+    console.log('Ищи элемент', this.state.searchedTask);
+    event.preventDefault();
+  };
+    const searchTask = (title, tasks) => {
+      console.log('Поиск');
 
+    };
     return (
-      <div>
+      <div className='wrap'>
+        <form>
+        <input onInput={pressTaskName}  onKeyUp={searchTask} type='text' className='searchTask' placeholder='Enter task name for search...'/>
+        </form>
         <TasksGrid onSubmitDeleteTask={onSubmitDeleteTask} changeStatus={changeStatus} tasks={this.state.tasks}/>
         <form onSubmit={handleSubmit}>
           <label>

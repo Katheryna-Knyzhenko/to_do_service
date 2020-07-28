@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
-import './TasksGrid.css';
+
 
 class DeleteConfirmation extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
   }
 
 
   render() {
-    const {deletedTaskId, onSubmitDeleteTask, onCancelDeleteTask} =this.props;
+    const {deletedTaskId, onSubmitDeleteTask, onCancelDeleteTask} = this.props;
 
     return (
       <div>
