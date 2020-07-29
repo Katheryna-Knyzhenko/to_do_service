@@ -1,0 +1,1 @@
+{"version":3,"file":"mixins.css","sources":["mixins.scss"],"sourcesContent":["@mixin border {\r\n  border: 1px black solid;\r\n  border-radius: 13px;\r\n}\r\n@mixin centered {\r\n  justify-content: center;\r\n  align-items: center;\r\n}"],"names":[],"mappings":""}

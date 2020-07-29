@@ -1,0 +1,99 @@
+.popupDeleteOrNo {
+  z-index: 30;
+  position: fixed;
+  width: 53vw;
+  height: 30vh;
+  background-color: rgba(88, 67, 132, 0.9);
+  overflow: hidden;
+  display: flex;
+  top: 25%;
+  left: 23%;
+  color: whitesmoke;
+  font-size: 1.6em;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3em;
+  border-radius: 2%;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center; }
+
+.askAboutDeleteTask {
+  display: flex;
+  justify-content: center;
+  text-align: center; }
+  .askAboutDeleteTask:hover {
+    color: red; }
+
+.buttonsDelete {
+  display: flex;
+  flex-flow: row;
+  margin-top: 2em;
+  justify-content: center; }
+
+.deleteButtonOk, .deleteButtonCancel {
+  display: flex;
+  height: 2.4em;
+  width: 6em;
+  align-items: center;
+  margin-left: 5em;
+  color: white;
+  justify-content: center;
+  border-bottom-left-radius: 50% 40px;
+  border-bottom-right-radius: 40% 10px;
+  border-top-right-radius: 30% 80px;
+  border-top-left-radius: 80% 10px; }
+  .deleteButtonOk:focus, .deleteButtonCancel:focus {
+    outline: none; }
+
+.deleteButtonCancel {
+  background-color: cadetblue; }
+  .deleteButtonCancel:hover {
+    background-color: lightslategray; }
+
+.deleteButtonOk {
+  background-color: crimson; }
+  .deleteButtonOk:hover {
+    background-color: red; }
+
+@media (min-width: 280px) and (max-width: 450px) {
+  .popupDeleteOrNo {
+    padding: 7px;
+    font-size: 14px;
+    height: 10em;
+    width: 16em; }
+  .deleteButtonCancel, .deleteButtonOk {
+    font-size: 10px;
+    width: 4em;
+    margin-left: 1.5em; }
+    .deleteButtonCancel .askAboutDeleteTask, .deleteButtonOk .askAboutDeleteTask {
+      padding-left: 9px; } }
+
+@media (min-width: 320px) {
+  .popupDeleteOrNo {
+    left: 15%; } }
+
+@media (min-width: 360px) {
+  .popupDeleteOrNo {
+    left: 18%; } }
+
+@media (min-width: 411px) and (max-width: 414px) {
+  .popupDeleteOrNo {
+    left: 21%; } }
+
+@media (min-width: 417px) and (max-width: 450px) {
+  .popupDeleteOrNo {
+    left: 24%; } }
+
+@media (min-width: 768px) {
+  .popupDeleteOrNo {
+    left: 24%; }
+  .deleteButtonCancel, .deleteButtonOk {
+    font-size: 10px;
+    width: 4em;
+    margin-left: 1.5em; }
+    .deleteButtonCancel .askAboutDeleteTask, .deleteButtonOk .askAboutDeleteTask {
+      padding-left: 9px; } }
+
+/*# sourceMappingURL=deletePopUp.css.map */

@@ -1,0 +1,87 @@
+.wrap {
+  background-color: #cbbae8;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.mainContainer {
+  background-color: #cbbae8;
+  width: 60vw;
+  height: 60vh;
+  display: flex;
+  flex-flow: column; }
+
+.inputSearchTask {
+  display: flex;
+  position: relative;
+  width: 59.3vw;
+  height: 3.5em;
+  border: 1px black solid;
+  border-radius: 13px;
+  padding-left: 10px;
+  font-size: 1em;
+  margin-bottom: 4em;
+  background-color: whitesmoke; }
+  .inputSearchTask:focus {
+    color: blue;
+    font-weight: bold;
+    padding-left: 10px;
+    outline: none; }
+
+.formSubmit {
+  display: flex;
+  margin-top: 5em;
+  flex-flow: row;
+  width: 59.3vw;
+  height: 3.5em; }
+
+.inputAddTask {
+  display: flex;
+  height: 3.75em;
+  width: 47vw;
+  font-size: 1em;
+  padding-left: 2%;
+  border: 1px black solid;
+  border-radius: 13px 0 0 13px; }
+  .inputAddTask:focus {
+    color: blue;
+    font-weight: bold;
+    outline: none; }
+
+.buttonAddTask {
+  display: flex;
+  height: 4em;
+  min-width: 13vw;
+  font-size: 1em;
+  padding-left: 2%;
+  justify-content: center;
+  align-items: center;
+  border: 1px black solid;
+  border-radius: 0 13px  13px 0; }
+  .buttonAddTask:focus {
+    outline: none; }
+
+.buttonAddTask:hover {
+  background-color: #cbbae8;
+  font-weight: bold;
+  color: white;
+  outline: none; }
+
+@media (min-width: 280px) and (max-width: 450px) {
+  .buttonAddTask {
+    font-size: 10.5px;
+    padding: 10px; }
+  .inputAddTask {
+    font-size: 8.6px;
+    padding: 4px; }
+  .inputSearchTask {
+    font-size: 12px; } }
+
+/*# sourceMappingURL=mainPage.css.map */

@@ -13,7 +13,7 @@ class TasksGrid extends Component {
 
 
   render() {
-    const {tasks, changeStatus, onSubmitDeleteTask} = this.props;
+    const {tasks, changeStatus, onSubmitDeleteTask, searchedText} = this.props;
 
     const onCancelDeleteTask = () => {
       this.setState({deletedTaskId: null})
@@ -21,18 +21,22 @@ class TasksGrid extends Component {
 
     return (
       <div className='taskGrid'>
-        {tasks.map(task =>
-          <div key={task.id} className='flexDiv' >
+        {tasks
+          .filter(task => task.title.includes(searchedText))
+          .map(task =>
+            <div key={task.id} className='flexDiv'>
             <span
               className={task.done ? 'taskTitle taskDoneStatus' : 'taskTitle taskToDoStatus'}
               onClick={() => changeStatus(task.id, !task.done)}>{task.title}
             </span>
 
-            {task.done && <button className='deleteTask' onClick={() => this.setState({deletedTaskId: task.id})}>Delete</button>}
+              {task.done &&
+              <button className='deleteTask' onClick={() => this.setState({deletedTaskId: task.id})}>Delete</button>}
 
-            {this.state.deletedTaskId === task.id &&
-            <DeleteConfirmation deletedTaskId={this.state.deletedTaskId} onSubmitDeleteTask={onSubmitDeleteTask} onCancelDeleteTask={onCancelDeleteTask}/>}
-          </div>)}
+              {this.state.deletedTaskId === task.id &&
+              <DeleteConfirmation deletedTaskId={this.state.deletedTaskId} onSubmitDeleteTask={onSubmitDeleteTask}
+                                  onCancelDeleteTask={onCancelDeleteTask}/>}
+            </div>)}
       </div>
 
     )
