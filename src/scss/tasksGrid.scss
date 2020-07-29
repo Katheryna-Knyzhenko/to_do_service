@@ -1,12 +1,13 @@
+@import 'mixins';
 
 @font-face {
-font-family: 'Kaushan Script';
+  font-family: 'Kaushan Script';
   src: url("../font/KaushanScript-Regular.otf");
 }
+
 .taskGrid {
   display: flex;
-  border: 1px black solid;
-  border-radius: 13px;
+  @include border;
   padding-left: 3em;
   padding-right: 1%;
   font-size: 1.2em;
@@ -16,6 +17,39 @@ font-family: 'Kaushan Script';
   overflow: auto;
   background-color: whitesmoke;
 }
+
+::-webkit-scrollbar {
+  width: 20px;
+  border: 1px solid grey;
+  border-radius: 13px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #999;
+  border-left: 1px solid grey;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-radius: 13px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: whitesmoke;
+  @include border;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 10px;
+  background-color: gainsboro;
+  border-left: 1px solid grey;
+  border-top: 1px solid grey;
+  @include border;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: #999;
+}
+
+
 .taskTitle {
   height: 1em;
   display: flex;
@@ -23,12 +57,16 @@ font-family: 'Kaushan Script';
   padding-bottom: 2%;
   cursor: pointer;
 }
+
 .taskDoneStatus {
-  color: gainsboro;
+  color: blue;
+  opacity: 0.4;
 }
+
 .taskToDoStatus {
   color: blue;
 }
+
 .flexDiv {
   display: flex;
   flex-flow: row;
@@ -37,11 +75,12 @@ font-family: 'Kaushan Script';
   padding-top: 1.5%;
 
 }
+
 .deleteTask {
   display: flex;
   height: 2.4em;
   width: 6em;
-  align-items: center;
+  @include centered;
   margin-left: 5em;
   background-color: gray;
   color: white;
@@ -50,10 +89,23 @@ font-family: 'Kaushan Script';
   border-bottom-right-radius: 40% 10px;
   border-top-right-radius: 30% 80px;
   border-top-left-radius: 80% 10px;
+
   &:focus {
     outline: none;
   }
+
   &:hover {
-    background-color: #cbbae8;
+    background-color: crimson;
+  }
+}
+@media (min-width: 280px) and (max-width: 450px) {
+  .deleteTask {
+    width: 3.5em;
+    font-size: 10px;
+    padding: 5px;
+  }
+  .taskGrid {
+    padding-left: 16px;
+    font-size: 14px;
   }
 }

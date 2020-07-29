@@ -1,3 +1,4 @@
+@import 'mixins';
 $backColor: rgb(203, 186, 232);
 
 .wrap {
@@ -10,9 +11,7 @@ $backColor: rgb(203, 186, 232);
   left: 0;
   overflow: hidden;
   display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
+  @include centered;
 }
 .mainContainer {
   background-color: $backColor;
@@ -27,8 +26,7 @@ $backColor: rgb(203, 186, 232);
   position: relative;
   width: 59.3vw;
   height: 3.5em;
-  border: 1px black solid;
-  border-radius: 13px;
+  @include border;
   padding-left: 10px;
   font-size: 1em;
   margin-bottom: 4em;
@@ -47,31 +45,53 @@ $backColor: rgb(203, 186, 232);
   flex-flow: row;
   width: 59.3vw;
   height: 3.5em;
-  background-color: antiquewhite;
 }
 
 .inputAddTask {
   display: flex;
-  height: 3.5em;
+  height: 3.75em;
   width: 47vw;
   font-size: 1em;
   padding-left: 2%;
+  border: 1px black solid;
+  border-radius:  13px 0 0 13px ;
   &:focus {
     color: blue;
     font-weight: bold;
+    outline: none;
   }
 }
 .buttonAddTask {
   display: flex;
   height: 4em;
-  width: 13vw;
+  min-width: 13vw;
   font-size: 1em;
   padding-left: 2%;
-  justify-content: center;
+  @include centered;
+  border: 1px black solid;
+  border-radius: 0 13px  13px 0;
+  &:focus {
+    outline: none;
+  }
 }
 .buttonAddTask:hover {
-  background-color: #cbbae8;
+  background-color: $backColor;
   font-weight: bold;
   color: white;
   outline: none;
+}
+
+@media (min-width: 280px) and (max-width: 450px){
+  .buttonAddTask {
+    font-size: 10.5px;
+    padding: 10px;
+  }
+  .inputAddTask {
+    font-size: 8.6px;
+    padding: 4px;
+
+  }
+  .inputSearchTask {
+    font-size: 12px;
+  }
 }
