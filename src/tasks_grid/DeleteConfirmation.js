@@ -13,15 +13,17 @@ class DeleteConfirmation extends Component {
   render() {
     const {deletedTaskId, onSubmitDeleteTask, onCancelDeleteTask} = this.props;
 
-    $(document).ready(function() {
-      const popup = document.querySelector('.popupDeleteOrNo');
-
-    document.onclick = function(e){
-      if (e.target.className !== 'popupDeleteOrNo') {
-        popup.style.display = 'none';
-      }
-    }
-  });
+  //   $(document).ready(function() {
+    //   //     const popup = document.querySelector('.popupDeleteOrNo');
+    //   //
+    //   //   document.onclick = function(e){
+    //   //     if (e.target.className !== 'popupDeleteOrNo') {
+    //   //       popup.style.visibility = 'hidden';
+    //   //     } else if (e.target.className === 'deleteTask'){
+    //   //       popup.style.visibility = 'visible';
+    //   //     }
+    //   //   }
+    //   // });
     return (
       <div className='popupDeleteOrNo'>
         <div className='askAboutDeleteTask'>Are you sure you want to delete the task?</div>
