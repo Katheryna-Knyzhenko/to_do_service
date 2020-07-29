@@ -3,9 +3,9 @@
   position: fixed;
   width: 53vw;
   height: 30vh;
-  background-color: lightslategray;
+  background-color: rgba(88,67,132,0.9);
   overflow: hidden;
-  display: inline-block;
+  display: flex;
   top: 25%;
   color: whitesmoke;
   font-size: 1.6em;
@@ -13,4 +13,48 @@
   text-align: center;
   padding-top: 3em;
   border-radius: 2%;
+  flex-flow: column;
+}
+.askAboutDeleteTask {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  &:hover {
+    color: red;
+  }
+}
+.buttonsDelete {
+  display: flex;
+  flex-flow: row;
+  margin-top: 2em;
+  justify-content: center;
+}
+.deleteButtonOk, .deleteButtonCancel {
+  display: flex;
+  height: 2.4em;
+  width: 6em;
+  align-items: center;
+  margin-left: 5em;
+  color: white;
+  justify-content: center;
+  border-bottom-left-radius: 50% 40px;
+  border-bottom-right-radius: 40% 10px;
+  border-top-right-radius: 30% 80px;
+  border-top-left-radius: 80% 10px;
+  &:focus {
+    outline: none;
+  }
+
+}
+.deleteButtonCancel {
+  background-color: cadetblue;
+  &:hover {
+    background-color: lightslategray;
+  }
+}
+.deleteButtonOk {
+  background-color: crimson;
+  &:hover {
+    background-color: red;
+  }
 }

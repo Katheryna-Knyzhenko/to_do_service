@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import '../scss/deletePopUp.scss'
+import '../scss/deletePopUp.scss';
+import $ from 'jquery';
 
 
 class DeleteConfirmation extends Component {
@@ -12,11 +13,22 @@ class DeleteConfirmation extends Component {
   render() {
     const {deletedTaskId, onSubmitDeleteTask, onCancelDeleteTask} = this.props;
 
+    $(document).ready(function() {
+      const popup = document.querySelector('.popupDeleteOrNo');
+
+    document.onclick = function(e){
+      if (e.target.className !== 'popupDeleteOrNo') {
+        popup.style.display = 'none';
+      }
+    }
+  });
     return (
       <div className='popupDeleteOrNo'>
-        <div>Are you sure you want to delete the task?</div>
-        <button onClick={() => onSubmitDeleteTask(deletedTaskId)}>OK</button>
-        <button onClick={onCancelDeleteTask}>Cancel</button>
+        <div className='askAboutDeleteTask'>Are you sure you want to delete the task?</div>
+        <div className='buttonsDelete'>
+        <button className='deleteButtonOk' onClick={() => onSubmitDeleteTask(deletedTaskId)}>OK</button>
+        <button className='deleteButtonCancel' onClick={onCancelDeleteTask}>Cancel</button>
+      </div>
       </div>
 
     )

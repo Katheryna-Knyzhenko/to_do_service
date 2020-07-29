@@ -8,15 +8,15 @@ class MainPage extends Component {
     super(props);
     this.state = {
       tasks: [],
-      title: '',
-      searchedTask: []
+      filteredTasks: [],
+      title: ''
     };
   }
 
   componentDidMount() {
     getTasks()
       .then((response) => {
-        this.setState({tasks: response.data})
+        this.setState({tasks: response.data, filteredTasks: response.data})
       })
   }
 
@@ -44,22 +44,19 @@ class MainPage extends Component {
     const onSubmitDeleteTask = (taskId) => {
       deleteTask(taskId).then(() => getTasks().then((response) => this.setState({tasks: response.data})))
     };
-  const pressTaskName = (event) => {
-    this.setState({searchedTask: event.target.value});
-    console.log('Ищи элемент', this.state.searchedTask);
-    event.preventDefault();
-  };
-    const searchTask = (title, tasks) => {
-      console.log('Поиск');
 
+    const searchTasks = (event) => {
+      const filteredTasks = this.state.tasks.filter(task => task.title.includes(event.target.value));
+      this.setState({filteredTasks: filteredTasks});
     };
+
     return (
       <div className='wrap'>
         <div className='mainContainer'>
         <form>
-        <input className='inputSearchTask' onInput={pressTaskName}  onKeyUp={searchTask} type='text'  placeholder='Enter task name for search...'/>
+        <input className='inputSearchTask' onKeyUp={searchTasks} type='text'  placeholder='Enter task name for search...'/>
         </form>
-        <TasksGrid onSubmitDeleteTask={onSubmitDeleteTask} changeStatus={changeStatus} tasks={this.state.tasks}/>
+        <TasksGrid onSubmitDeleteTask={onSubmitDeleteTask} changeStatus={changeStatus} tasks={this.state.filteredTasks}/>
         <form onSubmit={handleSubmit} className='formSubmit'>
           <label>
             <input className='inputAddTask' type='text' value={this.state.title} onChange={handleChange}
